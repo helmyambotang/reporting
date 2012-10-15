@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=US-ASCII"
     pageEncoding="US-ASCII"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,21 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" action="upload" enctype="multipart/form-data">
+	<form:form name="uploadFileForm" method="post" action="upload" enctype="multipart/form-data">
 		<fieldset>
 			<legend>Upload xml file</legend>
 			<p>
-				<label for="fileName">File Name:</label>
-				<input name="fileName" id="fileName"/>
-			</p>
-			<p>
-				<label for="fileData">File</label>
-				<input name="fileData" type="file"/>
+				<label for="uploadedFile">File Name:</label>
+				<input type="file" name="uploadedFile"/>
 			</p>
 			<p>
 				<input type="submit">
 			</p>
 		</fieldset>
-	</form>
+	</form:form>
 </body>
 </html>

@@ -11,6 +11,7 @@
 		<config>src/main/resources/spring-reporting-castor.xml</config>
 		<config>src/main/resources/spring-reporting-service.xml</config>
 		<config>src/main/resources/spring-reporting-mvc.xml</config>
+		<config>src/main/resources/spring-reporting-config.xml</config>
 	</configs>
 	<configSets>
 	</configSets>

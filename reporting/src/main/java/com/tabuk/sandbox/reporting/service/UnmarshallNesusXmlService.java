@@ -10,5 +10,5 @@ import com.tabuk.sandbox.reporting.bean.NesusClientData;
 
 public interface UnmarshallNesusXmlService {
 
-	NesusClientData parse(final File file) throws FileNotFoundException, MarshalException, ValidationException;
+	NesusClientData parse(final File input) throws FileNotFoundException, MarshalException, ValidationException;
 }
