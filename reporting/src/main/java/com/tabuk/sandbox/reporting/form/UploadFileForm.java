@@ -1,18 +1,27 @@
 package com.tabuk.sandbox.reporting.form;
 
+import java.io.Serializable;
+import java.util.List;
+
 import org.springframework.web.multipart.MultipartFile;
 
-public class UploadFileForm {
+public class UploadFileForm  implements Serializable{
 
-	private MultipartFile uploadedFile;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private List<MultipartFile> uploadedFiles;
 
-	public MultipartFile getUploadedFile() {
-		return uploadedFile;
+	public List<MultipartFile> getUploadedFiles() {
+		return uploadedFiles;
 	}
 
-	public void setUploadedFile(MultipartFile uploadedFile) {
-		this.uploadedFile = uploadedFile;
+	public void setUploadedFiles(List<MultipartFile> uploadedFiles) {
+		this.uploadedFiles = uploadedFiles;
 	}
+	
 	
 	
 }

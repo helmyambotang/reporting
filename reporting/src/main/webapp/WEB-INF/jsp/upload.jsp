@@ -36,16 +36,16 @@ body {
 </head>
 <body>
 	<div id="wrap">
-		<form:form name="uploadFileForm" method="post" action="upload"
+		<form:form name="uploadFileForm"  method="post" action="upload"
 			enctype="multipart/form-data">
 			<div class="field">
-				<label class="file-upload"> <span><strong>Upload file I</strong></span> <input type="file" name="uploadedFile">
+				<label class="file-upload"> <span><strong>Upload file I</strong></span> <input type="file" name="uploadedFile[0]">
 				</label>
 			</div>
-			<div class="field">
-				<label class="file-upload"> <span><strong>Upload file II</strong></span> <input type="file" name="uploadFile2">
-				</label>
-			</div>
+<!-- 			<div class="field"> -->
+<!-- 				<label class="file-upload"> <span><strong>Upload file II</strong></span> <input type="file" name="uploadFile[1]"> -->
+<!-- 				</label> -->
+<!-- 			</div> -->
 			<input type="submit">
 		</form:form>
 	</div>

@@ -47,7 +47,7 @@ public class NessusFileUploadController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public void handleFormUpload(
-			@RequestParam("uploadedFile") MultipartFile file, @RequestParam("uploadedFile2") MultipartFile file2, HttpServletResponse response)
+			@RequestParam("uploadedFile") MultipartFile file, HttpServletResponse response)
 			throws IOException, MarshalException, ValidationException {
 		File upLoadedfile = new File(file.getOriginalFilename());
 		upLoadedfile.createNewFile();
