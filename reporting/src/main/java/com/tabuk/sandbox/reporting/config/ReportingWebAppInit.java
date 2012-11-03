@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
@@ -25,7 +26,7 @@ public class ReportingWebAppInit implements WebApplicationInitializer {
 		 */
 		appContext.setConfigLocations(new String[]{"classpath:spring-reporting-*.xml"});
 		servletContext.addListener(new ContextLoaderListener(appContext));
-
+		servletContext.addListener(new RequestContextListener());
 		/**
 		 * Servlet config
 		 */

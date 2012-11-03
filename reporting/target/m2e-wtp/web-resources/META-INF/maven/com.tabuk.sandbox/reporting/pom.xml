@@ -112,6 +112,23 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- JSTL -->
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>javax.servlet.jsp.jstl</artifactId>
+			<version>1.2.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet.jsp</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>servlet-api</artifactId>
+					<groupId>javax.servlet</groupId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
 		<!-- file upload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>

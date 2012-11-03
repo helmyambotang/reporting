@@ -1,11 +1,12 @@
 package com.tabuk.sandbox.reporting.service;
 
+import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-
-import static junit.framework.Assert.*;
 
 import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Unmarshaller;
@@ -18,7 +19,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.xml.sax.InputSource;
 
 import com.tabuk.sandbox.reporting.bean.NesusClientData;
-import com.tabuk.sandbox.reporting.bean.Policy;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring-reporting-castor.xml")

@@ -3,7 +3,6 @@ package com.tabuk.sandbox.reporting.service;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -17,12 +16,9 @@ import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableCell;
-import org.apache.poi.xwpf.usermodel.XWPFTableRow;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTHeight;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTShd;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTcPr;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTextDirection;
-import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTTrPr;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.CTVerticalJc;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.STShd;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.STTextDirection;
@@ -47,8 +43,6 @@ public class ReportBuilderDocxServiceImpl implements ReportBuilderService {
 
 	@Override
 	public byte[] buildReport(List<ReportHost> datas) throws IOException {
-		logger.info(getClass().getClassLoader().getResource(TEMPLATE_FILE)
-				.getPath());
 		FileInputStream input = new FileInputStream(getClass().getClassLoader()
 				.getResource(TEMPLATE_FILE).getPath());
 		XWPFDocument document = new XWPFDocument(input);
@@ -126,11 +120,6 @@ public class ReportBuilderDocxServiceImpl implements ReportBuilderService {
 		}
 		table.getRow(0).getCell(columns - 1).setText("Total");
 		tableHeaderStyle(table);
-		table.getRow(0).setHeight(500);
-		XWPFTableRow row = table.getRow(0);
-		CTTrPr trPr = row.getCtRow().addNewTrPr();
-		CTHeight ht = trPr.addNewTrHeight();
-		ht.setVal(BigInteger.valueOf(360));
 		Map<String, List<Recommendation>> recommendations = populateFindings(table,reportHosts, vulnarabilities, columnMap, plugins);
 		return recommendations;
 	}
@@ -161,8 +150,7 @@ public class ReportBuilderDocxServiceImpl implements ReportBuilderService {
 					table.getRow(row).getCell(1).setText(hosts);
 					row = row + 1;
 					table.getRow(row).getCell(0).setText("Description");
-					table.getRow(row).getCell(1)
-							.setText(recommendation.getDescription());
+					table.getRow(row).getCell(1).setText(recommendation.getDescription());
 					row = row + 1;
 					table.getRow(row).getCell(0).setText("Impact");
 					table.getRow(row).getCell(1).setText(recommendation.getImpact());
@@ -287,7 +275,6 @@ public class ReportBuilderDocxServiceImpl implements ReportBuilderService {
 				recommendations = new ArrayList<>();
 			}
 			recommendation = new Recommendation();
-			logger.info("Starting to populate row " + 1);
 			int total = 0;
 			table.getRow(i).getCell(0).setText("Int-" + i);
 			recommendation.setId("Int-" + i);

@@ -6,7 +6,6 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.IOUtils;
 import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.ValidationException;
 import org.slf4j.Logger;
@@ -48,7 +47,7 @@ public class NessusFileUploadController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public void handleFormUpload(
-			@RequestParam("uploadedFile") MultipartFile file, HttpServletResponse response)
+			@RequestParam("uploadedFile") MultipartFile file, @RequestParam("uploadedFile2") MultipartFile file2, HttpServletResponse response)
 			throws IOException, MarshalException, ValidationException {
 		File upLoadedfile = new File(file.getOriginalFilename());
 		upLoadedfile.createNewFile();

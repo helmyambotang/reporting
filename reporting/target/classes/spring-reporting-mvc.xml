@@ -11,6 +11,8 @@
 
 	<context:component-scan base-package="com.tabuk.sandbox.reporting.web.controller" />
 
+	<mvc:resources location="/resources/" mapping="/res/**" cache-period="30" />
+	
 	<mvc:annotation-driven />
 
 	<bean
@@ -24,4 +26,5 @@
 		id="multipartResolver">
 		<property name="maxUploadSize" value="10000000" />
 	</bean>
+	
 </beans>
