@@ -1,7 +1,6 @@
 package com.tabuk.sandbox.reporting.web.controller;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
@@ -50,10 +49,6 @@ public class NessusFileUploadController {
 			@RequestParam("uploadedFile") MultipartFile file, HttpServletResponse response)
 			throws IOException, MarshalException, ValidationException {
 		File upLoadedfile = new File(file.getOriginalFilename());
-		upLoadedfile.createNewFile();
-		FileOutputStream fileOutputStream = new FileOutputStream(upLoadedfile);
-		fileOutputStream.write(file.getBytes());
-		fileOutputStream.close();
 		NesusClientData nesusClientData = unmarshallNesusXmlService.parse(upLoadedfile);
 		byte[] report = this.reportBuilderService.buildReport(nesusClientData.getReport().getReportHosts());
 		response.setBufferSize(report.length);

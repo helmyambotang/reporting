@@ -45,6 +45,7 @@ public class ReportBuilderDocxServiceImpl implements ReportBuilderService {
 	public byte[] buildReport(List<ReportHost> datas) throws IOException {
 		FileInputStream input = new FileInputStream(getClass().getClassLoader()
 				.getResource(TEMPLATE_FILE).getPath());
+		logger.info(getClass().getClassLoader().getResource(TEMPLATE_FILE).getPath());
 		XWPFDocument document = new XWPFDocument(input);
 		doGenerateScopeOfWorkTable(document, datas);
 		Map<String, List<Recommendation>> recommendations = doGenerateFindings(document,datas);
