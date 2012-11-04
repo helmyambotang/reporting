@@ -39,7 +39,7 @@ body {
 		<form:form name="uploadFileForm"  method="post" action="upload"
 			enctype="multipart/form-data">
 			<div class="field">
-				<label class="file-upload"> <span><strong>Upload Nessus file:</strong></span> <input type="file" name="uploadedFile">
+				<label class="file-upload"> <span><strong>Upload file:</strong></span> <input type="file" name="uploadedFile">
 				</label>
 			</div>
 <!-- 			<div class="field"> -->
@@ -47,6 +47,7 @@ body {
 <!-- 				</label> -->
 <!-- 			</div> -->
 			<input type="submit">
+			
 		</form:form>
 	</div>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/res/js/file-upload.js"></script>

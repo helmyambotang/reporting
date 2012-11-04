@@ -9,7 +9,25 @@
 	position: relative;	
 	vertical-align: middle;
 	text-align: center;
+	font-size: xx-small;
+	/* Cosmetics */
+	color: #fff;
+	border: 2px solid #2FA2FF;
+	background: #6FBEFF;
 
+	/* Nice if your browser can do it */
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	text-shadow: #000 1px 1px 4px;
+    }
+    
+ .file-submit {
+	overflow: hidden;
+	display: inline-block;
+	position: relative;	
+	vertical-align: middle;
+	text-align: center;
 	/* Cosmetics */
 	color: #fff;
 	border: 2px solid #2FA2FF;
