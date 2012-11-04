@@ -39,7 +39,7 @@ body {
 		<form:form name="uploadFileForm"  method="post" action="upload"
 			enctype="multipart/form-data">
 			<div class="field">
-				<label class="file-upload"> <span><strong>Upload file I</strong></span> <input type="file" name="uploadedFile[0]">
+				<label class="file-upload"> <span><strong>Upload Nessus file:</strong></span> <input type="file" name="uploadedFile">
 				</label>
 			</div>
 <!-- 			<div class="field"> -->
